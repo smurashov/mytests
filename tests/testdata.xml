@@ -1,0 +1,8 @@
+<data>
+    <browser name="Chrome"/>
+    <!--<browser name="Safari"/>-->
+    <navigation view="currency" part_of_view="header" target="http://www.sberbank.ru/ru/quotes/converter/"/>
+    <navigation view="currency" part_of_view="body" target="http://www.sberbank.ru/ru/quotes/converter/"/>
+    <navigation view="metals" part_of_view="header" target="http://www.sberbank.ru/ru/quotes/metalbeznal/"/>
+    <navigation view="metals" part_of_view="body" target="http://www.sberbank.ru/ru/quotes/metalbeznal/"/>
+</data>
