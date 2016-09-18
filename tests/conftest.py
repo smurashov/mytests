@@ -1,4 +1,3 @@
-import allure
 import xml.etree.ElementTree as ET
 import os
 import pytest
@@ -14,8 +13,6 @@ for browser in root.findall('browser'):
     browsers.append(browser.attrib["name"])
 
 navigation_attrs = list(map(lambda x: x.attrib, root.findall('navigation')))
-
-print(browsers, navigation_attrs)
 
 
 @pytest.fixture(scope='module', params=browsers)
