@@ -34,5 +34,3 @@ def currency_widget(request, driver):
 @pytest.fixture(scope='function', params=navigation_attrs)
 def navigation(request):
     return request.param
-
-

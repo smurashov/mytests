@@ -10,9 +10,12 @@ def test_currency_widget_is_present(currency_widget):
         Check that currency widget is displayed fine
     """
     with pytest.allure.step("Check that currency widget is displayed fine"):
-        assert currency_widget.title == "Курсы"
-        assert not currency_widget.widget_icons.is_displayed()
-        assert currency_widget.body.is_displayed()
+        assert currency_widget.title == "Курсы",\
+            "Title isn't the same as expected"
+        assert not currency_widget.widget_icons.is_displayed(),\
+            "Hidden icons are displayed"
+        assert currency_widget.body.is_displayed(),\
+            "Currency widget's body isn't displayed"
 
 
 def test_currency_widget_icon_hider(currency_widget):
@@ -37,14 +40,16 @@ def test_currency_widget_icon_hider(currency_widget):
 
     with pytest.allure.step(
             "Check that currency widget's icons are displayed"):
-        assert currency_widget.widget_icons.is_displayed()
+        assert currency_widget.widget_icons.is_displayed(),\
+            "Icons are not displayed"
 
     with pytest.allure.step("Click on icon hider of currency widget"):
         currency_widget.icon_hider.click()
 
     with pytest.allure.step(
             "Check that currency widget's icons aren't displayed"):
-        assert not currency_widget.widget_icons.is_displayed()
+        assert not currency_widget.widget_icons.is_displayed(),\
+            "Hidden icons are displayed"
 
 
 def test_currency_widget_minimize(currency_widget):
@@ -70,14 +75,16 @@ def test_currency_widget_minimize(currency_widget):
 
     with pytest.allure.step(
             "Check that currency widget's body isn't dispayed"):
-        assert not currency_widget.body.is_displayed()
+        assert not currency_widget.body.is_displayed(), \
+            "Currency widget's body is displayed"
 
     with pytest.allure.step("Click on minimize icon of currency widget"):
         currency_widget.minimize_icon.click()
 
     with pytest.allure.step(
             "Check that currency widget's body is dispayed"):
-        assert currency_widget.body.is_displayed()
+        assert currency_widget.body.is_displayed(),\
+            "Currency widget's body isn't displayed"
 
 
 def test_currency_widget_view_navigation_to_next_page(driver, currency_widget,
@@ -113,5 +120,5 @@ def test_currency_widget_view_navigation_to_next_page(driver, currency_widget,
 
     with pytest.allure.step("Check that redirection url is {}".format(
             navigation["target"])):
-        assert navigation["target"] == driver.current_url
-
+        assert navigation["target"] == driver.current_url,\
+            "Redirection url is wrong"
