@@ -1,4 +1,4 @@
-from common.widgets import CurrencyWidget
+from common.widgets.currency_widget import CurrencyWidget
 
 
 class PersonPage:
